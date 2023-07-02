@@ -1,4 +1,4 @@
-#!/usr/bin/python3  
+#!/usr/bin/python3
 from bcc import BPF
 import ctypes as ct
 
@@ -54,10 +54,15 @@ prog_array[ct.c_int(225)] = ct.c_int(timer_fn.fd)
 prog_array[ct.c_int(226)] = ct.c_int(timer_fn.fd)
 
 # Ignore some syscalls that come up a lot
+prog_array[ct.c_int(0)] = ct.c_int(ignore_fn.fd)
+prog_array[ct.c_int(1)] = ct.c_int(ignore_fn.fd)
+prog_array[ct.c_int(7)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(21)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(22)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(25)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(29)] = ct.c_int(ignore_fn.fd)
+prog_array[ct.c_int(44)] = ct.c_int(ignore_fn.fd)
+prog_array[ct.c_int(47)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(56)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(57)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(63)] = ct.c_int(ignore_fn.fd)
@@ -74,6 +79,8 @@ prog_array[ct.c_int(134)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(135)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(139)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(172)] = ct.c_int(ignore_fn.fd)
+prog_array[ct.c_int(202)] = ct.c_int(ignore_fn.fd)
+prog_array[ct.c_int(232)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(233)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(280)] = ct.c_int(ignore_fn.fd)
 prog_array[ct.c_int(291)] = ct.c_int(ignore_fn.fd)
